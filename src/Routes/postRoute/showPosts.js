@@ -44,10 +44,6 @@ const ShowPosts = ()=>{
             <li onClick={()=>{window.localStorage.clear()}}><Link to="/login">LogOut</Link></li>
         </ul>
     </header>
-                        {response?.length&&<h1>has array</h1>}
-
-            {response!==undefined&&<h1>undefined</h1>}
-            {/* {response} */}
              {response?.result?.map((e,i)=>{
                 return (
                 <div className="post-card-container" key={e._id}>

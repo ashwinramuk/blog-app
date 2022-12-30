@@ -33,22 +33,38 @@ const Login = ()=>{
     }
   
     return(
-        <div className="form-main-container">
-            <div className="form-sub-container">
+        <div className="container-fluid" >
+            <div className="row justify-content-center align-items-center bg-success w-100" style={{"height":"100vh",}}>
+            <div className="col-sm-6">
+ 
+            <div className="card p-3" >
+                <div className="card-body">
             <form onSubmit={handleSubmit} method="POST">
-                <label>
-                    <input type="email" onChange={(e)=>{setLoginData({...loginData,email:e.target.value})}} value={loginData.email}/>
-                </label>
-                <label>
-                    <input type="password" onChange={(e)=>{setLoginData({...loginData,password:e.target.value})}} value={loginData.password}/>
-                </label>
-                <label>
-                    <input type="submit" value="LOGIN"/>
-                </label>
-                <p>Forgot Password?</p>
+                <h6 className="card-title mb-3">LOGIN</h6>
+                <div className="form-group mb-3">
+                    <label for="loginEmail" className="form-label">Email</label>
+                    <input type="email" className="form-control" id="loginEmail" onChange={(e)=>{setLoginData({...loginData,email:e.target.value})}} value={loginData.email}/>
+                    <div id="emailValidationText" className="form-text">Email Validation</div>
+                </div>
+                <div className="form-group mb-3">
+                    <label for="loginPassword" className="form-label">Password</label>
+                    <input type="password" id="loginPassword" className="form-control" onChange={(e)=>{setLoginData({...loginData,password:e.target.value})}} value={loginData.password}/>
+                    <div id="emailValidationText" className="form-text">Password validation</div>
+                    <div className="form-check form-text">
+                        <input type="checkbox" className="form-check-input" id="remeberMe"/>
+                        <label className="form-check-label" for="rememberMe">Remember me?</label>
+                    </div>
+                </div>
+                <div className="form-group mb-3">
+                    <input type="submit" className="btn btn-primary btn-block w-100" value="LOGIN"/>
+                    <p className="form-text text-end">Forgot Password?</p>
+                </div>
             </form>
-            <div>
-                Need an Account?<Link to="/register">SIGNUP</Link>
+            <div className="form-text text-center">
+                Need an account? <Link to="/register">SIGN UP</Link>
+            </div>
+            </div>
+            </div>
             </div>
             </div>
         </div>
